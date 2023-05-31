@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- form for wizard -->
+        <record id="view_bank_loan_wizard_form" model="ir.ui.view">
+        <field name="name">bank.loan.wizard.form</field>
+        <field name="model">bank.loan.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Bank Loan">
+                <sheet>
+                    <field name="advance_amount"/>
+                </sheet>
+                <footer>
+                    <button string="Create Loan" name="create_bank_loan_from_wiz" type="object" class="btn-primary"/>
+                    <button string='Cancel' class= "btn btn-sceondary" special='cancel'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- form for loan -->
+        <record id="view_bank_loan_form" model="ir.ui.view">
+        <field name="name">bank.loan.form</field>
+        <field name="model">bank.loan</field>
+        <field name="arch" type="xml">
+            <form string="Bank Loan">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lc_number"/>
+                            <field name="bank_name"/>
+                            <field name="branch_name"/>
+                            <field name="ac_no"/>
+                            <field name="date_issued"/>
+                            <field name="due_date"/>
+                        </group>
+                        <group>
+                            <field name="loan_amount"/>
+                            <field name="advance_amount"/>
+                            <field name="due_amount"/>
+                            <field name="interest"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <record id="action_bank_loan" model="ir.actions.act_window">   
+            <field name="name">Bank Loan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bank.loan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

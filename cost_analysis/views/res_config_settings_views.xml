@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.cost.analysis</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside" >
+                    <div class="app_settings_block" data-string="Cost Analysis" string="Cost Analysis" data-key="cost_analysis">
+                        <h2>Cost Analysis</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="cost_journal"/>
+                                    <div>
+                                        <field name="cost_journal"/>
+                                    </div>
+                                </div>
+                                <div class="o_setting_left_pane"/>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="cost_account"/>
+                                    <div>
+                                        <field name="cost_account"/>
+                                    </div>
+                                </div>
+                                <div class="o_setting_left_pane"/>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_cost_analysis_config" model="ir.actions.act_window">   
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'cost_analysis'}</field>
+        </record>
+
+    </data>
+</odoo>

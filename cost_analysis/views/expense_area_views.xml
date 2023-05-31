@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_expense_area_tree" model="ir.ui.view">
+        <field name="name">lc.expense.area.tree</field>
+        <field name="model">lc.expense.area</field>
+        <field name="arch" type="xml">
+            <tree string="Expense Area" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="action_expense_area" model="ir.actions.act_window">   
+            <field name="name">Expense Area</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lc.expense.area</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cost_analysis_tree" model="ir.ui.view">
+        <field name="name">cost.analysis.tree</field>
+        <field name="model">cost.analysis</field>
+        <field name="arch" type="xml">
+            <tree string="Cost Analysis">
+                <field name="lc_number"/>
+                <field name="partner_id"/>
+                <field name="bank_name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_cost_analysis_form" model="ir.ui.view">
+        <field name="name">cost.analysis.form</field>
+        <field name="model">cost.analysis</field>
+        <field name="arch" type="xml">
+            <form string="Cost Analysis">
+                <header>
+                    <button string="Post All Expenses" type="object" class="btn-primary" name="post_all_expenses_button"/>
+                    <button string="Create PO" type="object" class="btn-primary" name="create_po_button"/>
+                    <button string="Calculate Unit Price" type="object" class="btn-primary" name="calculate_unit_price_button"/>
+                    <button string="Create Bank Loan" type="object" class="btn-primary" name="open_advance_wizard"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lc_number"/>
+                            <field name="initial_date"/>
+                            <field name="validation_date"/>
+                        </group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="bank_name"/>
+                            <field name="branch_name"/>
+                            <field name="ac_no"/>
+                            <field name="currency"/>
+                            <field name="conversion_rate"/>
+                        </group>
+                    </group>
+                    <group>
+                        <label for="product_list_ids" string="Product List"/>
+                    </group>
+                    <field name="product_list_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="uom"/>
+                            <field name="unit_price"/>
+                            <field name="quantity"/>
+                            <field name="price_global"/>
+                        </tree>
+                    </field>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="total_price"/>  
+                    </group>
+                    <group>
+                        <label for="expense_area_ids" string="External Expenses"/>
+                    </group>
+                    <field name="expense_area_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="expense_area_id"/>
+                            <field name="details"/>
+                            <field name="amount"/>
+                            <field name="status"/>
+                            <button string="Post" type="object" class="btn-primary" name="post_button"/>
+                        </tree>
+                    </field>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="total_expense"/>  
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cost_analysis_list" model="ir.actions.act_window">
+        <field name="name">Cost Analysis</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cost.analysis</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

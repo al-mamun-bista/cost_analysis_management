@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem 
+        id="menu_cost_analysis_module"
+        name="Cost Analysis"
+        sequence="-1"/>
+    
+    <menuitem 
+        id="menu_cost_analysis"
+        name="Cost Analysis"
+        parent="menu_cost_analysis_module"
+        action="action_cost_analysis_list"
+        sequence="1"/>
+
+    <menuitem 
+        id="menu_cost_analysis_config"
+        name="Configuration"
+        parent="menu_cost_analysis_module"
+        sequence="5"/>
+
+    <menuitem 
+        id="menu_cost_analysis_setting"
+        name="Settings"
+        parent="menu_cost_analysis_config"
+        action="action_cost_analysis_config"
+        sequence="0"/>
+
+    <menuitem 
+        id="menu_expense_area_tree"
+        name="Expense Area"
+        parent="menu_cost_analysis_config"
+        action="action_expense_area"
+        sequence="3"/>
+
+    <menuitem 
+        id="menu_bank_loan"
+        name="Bank Loan"
+        parent="menu_cost_analysis_config"
+        action="action_bank_loan"
+        sequence="5"/>
+
+</odoo>

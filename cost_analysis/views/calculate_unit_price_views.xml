@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_calculate_unit_price_form" model="ir.ui.view">
+        <field name="name">calculate.unit.price.form</field>
+        <field name="model">calculate.unit.price</field>
+        <field name="arch" type="xml">
+            <form string="Calculate Unit Price">
+                <sheet>
+                    <!-- <field name="product_list_ids" widget="many2many_tags"/> -->
+                    <field name="product_list_ids" nolabel="1" readonly="1">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="uom"/>
+                            <field name="unit_price"/>
+                            <field name="quantity"/>
+                            <field name="price_global"/>
+                            <field name="external_expense"/>
+                            <field name="unit_price_total"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button string='Cancel' class= "btn btn-primary" special='cancel'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

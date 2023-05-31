@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cost_analysis,cost.analysis,model_cost_analysis,,1,1,1,1
+access_product_list,product.list,model_product_list,,1,1,1,1
+access_external_expenses,external.expenses,model_external_expenses,,1,1,1,1
+access_lc_expense_area,lc.expense.area,model_lc_expense_area,,1,1,1,1
+access_calculate_unit_price,calculate.unit.price,model_calculate_unit_price,,1,1,1,1
+access_product_list_transient,product.list.transient,model_product_list_transient,,1,1,1,1
+access_bank_loan,bank.loan,model_bank_loan,,1,1,1,1
+access_bank_loan_wizard,bank.loan.wizard,model_bank_loan_wizard,,1,1,1,1
